@@ -13,11 +13,17 @@ import { DialogDetailComponent } from '../common/dialog detail/dialog-detail.com
 
 export class ShipDetailPageComponent implements OnInit, OnDestroy {
   public title: string = 'Ship List';
-  public shipList: Array<number> = [1, 2 , 3, 4, 5, 6];
+  public shipList: Array<ShipLaunch> = [];
   public dialogConfig: MatDialogConfig = new MatDialogConfig();
   private launchShipList$: Subscription = new Subscription;
+  private dialogref$: Subscription = new Subscription;
 
-  constructor(private dialog: MatDialog, private shipService: ShipService) {}
+  constructor(private dialog: MatDialog, private shipService: ShipService) {
+    this.dialogConfig = {
+      disableClose: true,
+      autoFocus: true
+    }
+  }
 
   ngOnInit(): void {
     this.getLaunchShipList()
@@ -32,12 +38,18 @@ export class ShipDetailPageComponent implements OnInit, OnDestroy {
     this.launchShipList$ = this.shipService
         .getLaunchShipList$().subscribe((launchShipList: Array<ShipLaunch>) => {
           if(launchShipList) {
-            console.log(launchShipList)
+            this.shipList = launchShipList
           }
         });
   }
 
   public openShipDetailDialog(): void {
-    const dialogRef = this.dialog.open(DialogDetailComponent, this.dialogConfig);
+    const dialogRef = this.dialog.open(DialogDetailComponent, {
+      disableClose: false,
+      autoFocus: true,
+      data: {
+        ship: this.shipList[0]
+      }
+    });
   }
 }

@@ -8,16 +8,16 @@
       </div>
     </section>
     <div class="d-flex row g-3 justify-content-center">
-      <section *ngFor="let shit of shipList" class="section-card shadow m-5 card d-flex col-3 flex-column" (click)="openShipDetailDialog()">
+      <section *ngFor="let ship of shipList" class="section-card shadow m-5 card d-flex col-3 flex-column" (click)="openShipDetailDialog()">
         <div class="container card-body d-flex flex-row align-items-end">
-          <h5 class="col-8 card-title">Nombre nave</h5>
+          <h5 class="col-8 card-title">{{ ship.name | uppercase }}</h5>
           <div class="d-flex col-4 justify-content-around">
             <button class="btn col-4 btn-edit" title="Edit"><i class="fa fa-edit"></i></button>
             <button class="btn col-4 btn-delete" title="Delete"><i class="fa fa-trash"></i></button>
           </div>
         </div>
         <div class="container cart-text">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>{{ ship.description }}</p>
         </div>
       </section>
     </div>
