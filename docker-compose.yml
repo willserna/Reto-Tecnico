@@ -1,0 +1,25 @@
+version: "3"
+services:
+  space-ship:
+    build:
+          context: ./space-ship
+          dockerfile: Dockerfile
+    container_name: space-ship
+    expose:
+      - "4200"
+    ports:
+      - "4200:4200"
+    networks:
+      - space-ship-network
+  backend:
+    build:
+          context: ./Back-end
+          dockerfile: Dockerfile
+    container_name: back-end
+    ports:
+      - "3000:3000"
+    networks:
+      - space-ship-network
+networks:
+  space-ship-network:
+    driver: bridge
