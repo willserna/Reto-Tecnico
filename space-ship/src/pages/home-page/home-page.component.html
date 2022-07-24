@@ -1,0 +1,21 @@
+<main class="main-container col-12">
+  <toolbar [title]="title"></toolbar>
+  <section class="d-flex col-12">
+    <div class="col-9">
+      <h3 class="pt-4 text-center">Descripción</h3>
+      <p class="pt-5 section-text">Los más importantes logros tecnológicos de la civilización humana y, lógicamente, más reciente que el ferrocarril, se encuentran las naves espaciales: increíbles vehículos capaces de abandonar la atmósfera terrestre, que destacan por su potencia y su velocidad. Desde el punto de vista físico, hay dos conceptos que siempre me han fascinado: el tiempo y la energía. Por eso creo que lo más interesante a la hora de hablar sobre naves espaciales consiste en la velocidad que pueden alcanzar y, sobre todo, los sistemas de propulsión.</p>
+    </div>
+    <div class="col-3 ship-list d-flex flex-column">
+      <h3 class="pt-5 text-center">Tipos de nave</h3>
+      <a class="mt-5">-> Vehiculo espacial tipo lanzadera</a>
+      <p>Cohete autopropulsado que sirve para lanzar una carga útil al espacio</p>
+      <a class="mt-5">-> Vehiculo espacial no tripulado</a>
+      <p>Carece de tripulación. Usualmente utilizado para exploración</p>
+      <a class="mt-5">-> Vehiculo espacial tripulado</a>
+      <p>Nave tripulada con fines de reparación, mantenimiento o investigación en misiones espaciales que requieran intervención humana</p>
+      <div class="d-flex button-container">
+        <button class="btn" (click)="navigateTo()">Ver todo</button>
+      </div>
+    </div>
+  </section>
+</main>

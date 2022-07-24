@@ -1,0 +1,9 @@
+<main class="container main-dialog">
+  <toolbar class="" [title]="title"></toolbar>
+  <h3 class="text-center">Nombre nave</h3>
+  <section class="d-flex row g-2 justify-content-center">
+    <div *ngFor="let ship of shipList" class="d-flex col-6 container-list">
+      <label>* Caracteristica {{ship}}</label>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,67 @@
+main {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.toolbar {
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+}
+
+.detail-description {
+  text-align: justify;
+}
+
+.main-container {
+  margin-top: 5rem;
+}
+
+.section-card:hover {
+  background-color: rgba(226, 225, 225, 0.993);
+  cursor: pointer;
+}
+
+.btn-edit {
+  color: white;
+  background-color: #00A5F9;
+}
+
+.btn-delete {
+  color: white;
+  background-color: red;
+}
+
+h5 {
+  padding-left: 1rem;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+p {
+  text-align: justify;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.btn-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 1.5rem;
+  border-radius: 50%;
+  background-color: #457b9d;
+
+  button {
+    border: none;
+  }
+}
+
+i {
+  color: white;
+}

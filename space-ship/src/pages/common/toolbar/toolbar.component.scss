@@ -1,0 +1,19 @@
+.toolbar {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #457b9d;
+  color: white;
+  font-weight: 600;
+}
+
+.toolbar h1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
