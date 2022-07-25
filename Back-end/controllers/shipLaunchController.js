@@ -55,6 +55,7 @@ exports.deleteShipLaunch = (req, res) => {
     ShipLaunch.deleteOne({ _id: req.params.shiplaunchid }, (error, ship) => {
         if(error) {
             res.status(404).send(error);
+            console.log(error);
         }
         res.status(200).json({ message:"Launch ship succesfully deleted"}); 
     });

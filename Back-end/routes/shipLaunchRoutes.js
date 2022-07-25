@@ -17,6 +17,6 @@ router.get("/ship-launch/:shiplaunchid", shipLaunchController.readShipLaunch)
 router.put("/ship-launch/:shiplaunchid", shipLaunchController.updateShipLaunch)
 
 //Delete existing launch ship by ID
-router.put("/ship-launch/:shiplaunchid", shipLaunchController.deleteShipLaunch)
+router.delete("/ship-launch/:shiplaunchid", shipLaunchController.deleteShipLaunch)
 
 module.exports = router
