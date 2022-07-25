@@ -39,9 +39,9 @@ Characteristics:
 -- Use
 
 ### Generic attributes
-Name
-Spaceship description
-Fuel Type
+--Name
+--Spaceship description
+--Fuel Type
 
 ### Specialized attributes
 #### Launch Ship:
