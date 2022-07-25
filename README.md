@@ -47,27 +47,27 @@ Characteristics:
 
 #### Generic attributes:
 
--Name
--Spaceship description
--Fuel Type
+- Name
+- Spaceship description
+- Fuel Type
 
 #### Specialized attributes:
 
 1. Launch Ship:
 
--Capacity
--Power
+- Capacity
+- Power
 
 2. Unmanned Ship
 
--Speed
--Thrust
--Destination
+- Speed
+- Thrust
+- Destination
 
 3. Manned Ship
 
--Person amount
--Use
+- Person amount
+- Use
 
 
 ## Architectural decisions
@@ -120,6 +120,7 @@ npm 6.14.8
 node 14.15.0
 express: 4.18.1
 Rest API that implements the following services:
+
 Common ENDPOINT:
 * GET localhost:3000/health (Test Controller to check services)
 
