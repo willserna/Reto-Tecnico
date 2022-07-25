@@ -1,0 +1,119 @@
+<main class="container main-dialog">
+  <toolbar [title]="title"></toolbar>
+  <div class="main-form-container">
+    <div *ngIf="typeRoute == 1" class="form-container">
+      <form class="d-flex row g-2" [formGroup]="createShipForm" (submit)="submit()">
+        <mat-form-field class="form-field col-4" appearance="outline">
+          <mat-label> Name
+          </mat-label>
+          <input matInput formControlName="name" required>
+        </mat-form-field>
+        <mat-form-field class="form-field col-4" appearance="outline">
+          <mat-label> Description
+          </mat-label>
+          <input matInput formControlName="description" type="text">
+        </mat-form-field>
+        <mat-form-field class="form-field col-4" appearance="outline">
+          <mat-label> Fuel type
+          </mat-label>
+          <input matInput formControlName="fuelType" type="text">
+        </mat-form-field>
+        <mat-form-field class="form-field col-4" appearance="outline">
+          <mat-label> Capacity
+          </mat-label>
+          <input matInput formControlName="capacity" type="number">
+        </mat-form-field>
+        <mat-form-field class="form-field col-4" appearance="outline">
+          <mat-label> Power
+          </mat-label>
+          <input matInput formControlName="power" type="number">
+        </mat-form-field>
+        <mat-form-field class="form-field col-4" appearance="outline">
+          <mat-label> Weight
+          </mat-label>
+          <input matInput formControlName="weight" type="number">
+        </mat-form-field>
+        <div class="container btn-create">
+          <button *ngIf="!edition" mat-raised-button class="btn btn-primary" color="primary" type="submit">Create ship</button>
+          <button *ngIf="edition" mat-raised-button class="btn btn-primary" color="primary" type="submit">Edit ship</button>
+        </div>
+      </form>
+    </div>
+    <div *ngIf="typeRoute == 3" class="form-container">
+      <form class="d-flex row g-2" [formGroup]="createShipForm" (submit)="submit()">
+        <mat-form-field class="form-field col-4" appearance="outline">
+          <mat-label> Name
+          </mat-label>
+          <input matInput formControlName="name" required type="text">
+        </mat-form-field>
+        <mat-form-field class="form-field col-4" appearance="outline">
+          <mat-label> Description
+          </mat-label>
+          <input matInput formControlName="description" type="text">
+        </mat-form-field>
+        <mat-form-field class="form-field col-4" appearance="outline">
+          <mat-label> Fuel type
+          </mat-label>
+          <input matInput formControlName="fuelType" type="text">
+        </mat-form-field>
+        <mat-form-field class="form-field col-4" appearance="outline">
+          <mat-label> Person amount
+          </mat-label>
+          <input matInput formControlName="personAmount" type="number">
+        </mat-form-field>
+        <mat-form-field class="form-field col-4" appearance="outline">
+          <mat-label> Use
+          </mat-label>
+          <input matInput formControlName="use" type="text">
+        </mat-form-field>
+        <mat-form-field class="form-field col-4" appearance="outline">
+          <mat-label> Weight
+          </mat-label>
+          <input matInput formControlName="weight" type="number">
+        </mat-form-field>
+        <div class="container btn-create">
+          <button *ngIf="!edition" mat-raised-button class="btn btn-primary" color="primary" type="submit">Create ship</button>
+          <button *ngIf="edition" mat-raised-button class="btn btn-primary" color="primary" type="submit">Edit ship</button>
+        </div>
+      </form>
+    </div>
+    <div *ngIf="typeRoute == 2" class="form-container">
+      <form class="d-flex row g-2" [formGroup]="createShipForm" (submit)="submit()">
+        <mat-form-field class="form-field col-4" appearance="outline">
+          <mat-label> Name
+          </mat-label>
+          <input matInput formControlName="name" required>
+        </mat-form-field>
+        <mat-form-field class="form-field col-4" appearance="outline">
+          <mat-label> Description
+          </mat-label>
+          <input matInput formControlName="description" type="text">
+        </mat-form-field>
+        <mat-form-field class="form-field col-4" appearance="outline">
+          <mat-label> Fuel type
+          </mat-label>
+          <input matInput formControlName="fuelType" type="text">
+        </mat-form-field>
+        <mat-form-field class="form-field col-4" appearance="outline">
+          <mat-label> Speed
+          </mat-label>
+          <input matInput formControlName="speed" type="number">
+        </mat-form-field>
+        <mat-form-field class="form-field col-4" appearance="outline">
+          <mat-label> Thrust
+          </mat-label>
+          <input matInput formControlName="thrust" type="number">
+        </mat-form-field>
+        <mat-form-field class="form-field col-4" appearance="outline">
+          <mat-label> Destination
+          </mat-label>
+          <input matInput formControlName="destination" type="text">
+        </mat-form-field>
+        <div class="container btn-create">
+          <button *ngIf="!edition" mat-raised-button class="btn btn-primary" color="primary" type="submit">Create ship</button>
+          <button *ngIf="edition" mat-raised-button class="btn btn-primary" color="primary" type="submit">Edit ship</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>

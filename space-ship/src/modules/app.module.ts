@@ -1,4 +1,6 @@
-import * as shipStore from '../store/ship/ship.reducer';
+import * as launchShipStore from '../store/launch ship/launch-ship.reducer';
+import * as mannedShipStore from '../store/manned ship/manned-ship.reducer';
+import * as unMannedShipStore from '../store/unmanned ship/unmanned-ship.reducer';
 
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,15 +16,22 @@ import { EffectsModule } from '@ngrx/effects';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
 import { DialogDetailComponent } from 'src/pages/common/dialog detail/dialog-detail.component';
-import { ShipService } from '../store/ship/ship.service';
-import { ShipEffects } from '../store/ship/ship.effects';
+import { LaunchShipService } from '../store/launch ship/launch-ship.service';
+import { LaunchShipEffects } from '../store/launch ship/launch-ship.effects';
 import { StoreModule } from '@ngrx/store';
 import { HttpClientModule } from '@angular/common/http';
+import { DialogFormComponent } from 'src/pages/common/dialog form/dialog-form.component';
+import { RouteService } from '../services/routeService';
+import { UnmannedShipEffects } from 'src/store/unmanned ship/unmanned-ship.effects';
+import { UnmannedShipService } from 'src/store/unmanned ship/unmanned-ship.service';
+import { MannedShipService } from 'src/store/manned ship/manned-ship.service';
+import { MannedShipEffects } from 'src/store/manned ship/manned-ship.effects';
 
 @NgModule({
   declarations: [
     AppComponent,
     DialogDetailComponent,
+    DialogFormComponent,
     HomePageComponent,
     ShipDetailPageComponent,
     ToolbarComponent
@@ -34,15 +43,23 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-    EffectsModule.forRoot([ShipEffects]),
+    EffectsModule.forRoot([LaunchShipEffects, MannedShipEffects, UnmannedShipEffects]),
     StoreModule.forFeature(
-      shipStore.shipFeatureKey,
-      shipStore.reducer
+      launchShipStore.launchShipFeatureKey,
+      launchShipStore.reducer
+    ),
+    StoreModule.forFeature(
+      mannedShipStore.mannedShipFeatureKey,
+      mannedShipStore.reducer
+    ),
+    StoreModule.forFeature(
+      unMannedShipStore.unMannedShipFeatureKey,
+      unMannedShipStore.reducer
     ),
     StoreModule.forRoot({}),
     HttpClientModule
   ],
-  providers: [ShipService],
+  providers: [LaunchShipService, MannedShipService, UnmannedShipService, RouteService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

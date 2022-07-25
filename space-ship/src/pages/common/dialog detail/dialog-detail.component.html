@@ -1,12 +1,23 @@
 <main class="container main-dialog">
   <toolbar class="" [title]="title"></toolbar>
-  <h3 class="text-center">{{ ship.name | uppercase }}</h3>
-  <section class="d-flex row g-2 justify-content-center section-dialog">
-    <div class="d-flex col-6 container-list">
-      <label>* Capacity: {{ ship.capacity }}</label>
-      <label>* Fuel type: {{ ship.fuelType }}</label>
-      <label>* Power: {{ ship.power }}</label>
-      <label>* Weight: {{ ship.weight }}</label>
-    </div>
+  <h3 class="text-center">{{ currentship.name | uppercase }}</h3>
+  <p class="text-center">{{ currentship.description }}</p>
+  <section *ngIf="typeRoute == 1" class="d-flex row g-2 justify-content-center section-dialog">
+      <label class="col-6">* Capacity: {{ currentship.capacity }}</label>
+      <label class="col-6">* Fuel type: {{ currentship.fuelType }}</label>
+      <label class="col-6">* Power: {{ currentship.power }}</label>
+      <label class="col-6">* Weight: {{ currentship.weight }}</label>
+  </section>
+  <section *ngIf="typeRoute == 2" class="d-flex row g-2 justify-content-center section-dialog">
+    <label class="col-6">* Speed: {{ currentship.speed }}</label>
+    <label class="col-6">* Fuel type: {{ currentship.fuelType }}</label>
+    <label class="col-6">* Thrust: {{ currentship.thrust }}</label>
+    <label class="col-6">* Destination: {{ currentship.destination }}</label>
+  </section>
+  <section *ngIf="typeRoute == 3" class="d-flex row g-2 justify-content-center section-dialog">
+    <label class="col-6">* Weight: {{ currentship.weight }}</label>
+    <label class="col-6">* Fuel type: {{ currentship.fuelType }}</label>
+    <label class="col-6">* Person amount: {{ currentship.personAmount }}</label>
+    <label class="col-6">* Use: {{ currentship.use }}</label>
   </section>
 </main>

@@ -8,12 +8,12 @@
       </div>
     </section>
     <div class="d-flex row g-3 justify-content-center">
-      <section *ngFor="let ship of shipList" class="section-card shadow m-5 card d-flex col-3 flex-column" (click)="openShipDetailDialog()">
+      <section *ngFor="let ship of shipList" class="section-card shadow m-5 card d-flex col-3 flex-column">
         <div class="container card-body d-flex flex-row align-items-end">
-          <h5 class="col-8 card-title">{{ ship.name | uppercase }}</h5>
+          <h5 class="col-8 card-title" (click)="openShipDetailDialog(ship)">{{ ship.name | uppercase }}</h5>
           <div class="d-flex col-4 justify-content-around">
-            <button class="btn col-4 btn-edit" title="Edit"><i class="fa fa-edit"></i></button>
-            <button class="btn col-4 btn-delete" title="Delete"><i class="fa fa-trash"></i></button>
+            <button class="btn col-4 btn-edit" title="Edit" (click)="editForm(ship)"><i class="fa fa-edit"></i></button>
+            <button class="btn col-4 btn-delete" title="Delete" (click)="deleteShip(ship._id || '')"><i class="fa fa-trash"></i></button>
           </div>
         </div>
         <div class="container cart-text">
@@ -22,7 +22,8 @@
       </section>
     </div>
   </div>
+  <p *ngIf="shipList.length == 0 " class="text-center empty-list">List empty, create an entry </p>
   <div class="fab-container btn-float">
-    <button class="btn" title="Create"><i class="fa fa-plus"></i></button>
+    <button class="btn" title="Create" (click)="openForm()"><i class="fa fa-plus"></i></button>
   </div>
 </main>

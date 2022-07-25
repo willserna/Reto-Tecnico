@@ -1,0 +1,40 @@
+.main-dialog {
+  padding: 0;
+}
+
+.mat-typography h3 {
+  padding-top: 2rem;
+  font-weight: bolder;
+}
+
+.container-list {
+  padding-left: 3rem;
+}
+
+.mat-dialog-container {
+  padding: 0;
+  width: 40rem;
+  height: 20rem;
+  overflow-x: hidden;
+}
+
+.main-form-container {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.form-container{
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.form-field{
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-create {
+  text-align: end;
+  padding-right: 1.5rem;
+  padding-top: 3rem;
+}

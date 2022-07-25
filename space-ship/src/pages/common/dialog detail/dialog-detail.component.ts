@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ShipLaunch } from 'src/store/ship/ship.model';
+import { RouteService } from 'src/services/routeService';
 
 @Component({
   selector: 'detail-dialog',
@@ -11,15 +11,19 @@ import { ShipLaunch } from 'src/store/ship/ship.model';
 
 export class DialogDetailComponent implements OnInit {
   public title: string = 'Ship Detail';
-  public currentship!: ShipLaunch;
+  public currentship!: any;
+  public typeRoute!: number;
 
   constructor(
     private dialogRef: MatDialogRef<DialogDetailComponent>,
-    @Inject(MAT_DIALOG_DATA) public ship: ShipLaunch
-  ) {}
+    private routeService: RouteService,
+    @Inject(MAT_DIALOG_DATA) public ship: any
+  ) {
+    this.typeRoute = this.routeService.getTypeRoute();
+  }
 
   ngOnInit(): void {
-    this.currentship = this.ship
+    this.currentship = this.ship.ship;
   }
 
 }
