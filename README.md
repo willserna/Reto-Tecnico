@@ -151,7 +151,7 @@ located: Back-end
 After Installation, this service is available on Port: 3000
 
 ### Frontend
-Web application that allows the user in a graphical interface to searche and create
+Web application that allows the user in a graphical interface to search and create
 spacecrafts
 
 located: space-ship
