@@ -19,4 +19,7 @@ router.put("/manned-ship/:mannedshipid", mannedShipController.updateMannedShip)
 //Delete existing Manned ship by ID
 router.delete("/manned-ship/:mannedshipid", mannedShipController.deleteMannedShip)
 
+//Read existing Unmanned ship by Weight
+router.get("/manned-ship/:unmannedshipweight", mannedShipController.readUnmannedShip)
+
 module.exports = router

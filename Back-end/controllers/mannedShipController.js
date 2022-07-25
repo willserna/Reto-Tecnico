@@ -34,6 +34,17 @@ exports.readMannedShip = (req, res) => {
     });
 }
 
+//Read a Manned ship with specific Weight
+
+exports.readMannedShip = (req, res) => {
+    MannedShip.findOne(req.params.mannedshipweight, (error, ship) => {
+        if(error) {
+            res.status(500).send(error);
+        }
+        res.status(200).json(ship);
+    });
+}
+
 //Update a Manned ship with specific ID
 
 exports.updateMannedShip = (req, res) => {
