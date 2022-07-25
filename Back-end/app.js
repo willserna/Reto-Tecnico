@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const launchShipRoute = require('./routes/shipLaunchRoutes');
 const unmannedShipRoute = require('./routes/unmannedShipRoutes');
 const mannedShipRoute = require('./routes/mannedShipRoutes');
-
+const commonRoute = require('./routes/commonRoute');
 //db instance connection
 require("./config/db");
 
@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 app.use(launchShipRoute);
 app.use(unmannedShipRoute);
 app.use(mannedShipRoute);
+app.use(commonRoute);
 
 app.listen(port, () => {
     console.log(`server running in ${port}`);
