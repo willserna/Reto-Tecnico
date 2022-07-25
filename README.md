@@ -1,64 +1,79 @@
 # Reto Tecnico
 ## Story/Assignment
 In this challenge a project applying key concepts of object oriented programming was developed.
-Regarding an article, It is asked to: 
--- Discover the types of spacecraft and their characteristics
--- Have a method which allows the creation and classification of the spacecrafts and a mechanism to
-make simple and advanced queries. 
+Regarding an article, It is asked to:
+
+- Discover the types of spacecraft and their characteristics
+- Have a method which allows the creation and classification of the spacecrafts and a mechanism to
+make simple and advanced queries.
+
 The following is the article that should be read for the challenge
 https://moaramore.com/2016/05/14/clasificacion-de-las-naves-espaciales
 
 ## Analysis
-### Summary document
-Physical characteristics
+### Summary
+
+#### Physical characteristics
+
 - Speed reached by the ship
 - Thrust systems
 
 Clasification
 1. Launch Ships: Self propelled ship, useful when launching different types of load to space
 Characteristics:
--- Fuel Type
--- Power
--- Capacity
--- Weight
+
+- Fuel Type
+- Power
+- Capacity
+- Weight
 
 2. Unmanned Ships
 Characteristics:
--- Fuel type
--- Speed
--- Thrust
--- Weight
--- Destination
+
+- Fuel type
+- Speed
+- Thrust
+- Weight
+- Destination
 
 
 3. Manned Ships
 Characteristics:
--- Fuel Type
--- Weight
--- Person amount
--- Use
 
-### Generic attributes
-Name
-Spaceship description
-Fuel Type
+- Fuel Type
+- Weight
+- Person amount
+- Use
 
-### Specialized attributes
-#### Launch Ship:
---Capacity
---Power
-#### Unmanned Ship
---Speed
---Thrust
---Destination
-#### Manned Ship
---Person amount
---Use
+#### Generic attributes:
+
+- Name
+- Spaceship description
+- Fuel Type
+
+#### Specialized attributes:
+
+1. Launch Ship:
+
+- Capacity
+- Power
+
+2. Unmanned Ship
+
+- Speed
+- Thrust
+- Destination
+
+3. Manned Ship
+
+- Person amount
+- Use
 
 
 ## Architectural decisions
 ### microservices architecture
-Why
+Why:
+
 - Modularity.
 - Easy to change.
 - Easy to support.
@@ -69,11 +84,13 @@ Why
 Note: To make sure the Microservices are up and running, a "Health" Endpoint was created, which constantly verifies weather the Microservice is alive.
 
 ### Data Base
+
 a MongoDB cloud was chosen thanks to its non-relational property. Since the entity "Space ship" has different attributes across the board, 
 a non-relational Data Base makes for an easy and flexible design.
 
 
 ### Front-End with Angular
+
 Angular CLI: 14.1.0
 Node: 14.15.0
 Package Manager: npm 6.14.8
@@ -103,6 +120,7 @@ npm 6.14.8
 node 14.15.0
 express: 4.18.1
 Rest API that implements the following services:
+
 Common ENDPOINT:
 * GET localhost:3000/health (Test Controller to check services)
 
@@ -133,7 +151,7 @@ located: Back-end
 After Installation, this service is available on Port: 3000
 
 ### Frontend
-Web application that allows the user in a graphical interface to searche and create
+Web application that allows the user in a graphical interface to search and create
 spacecrafts
 
 located: space-ship
@@ -174,7 +192,7 @@ located: AWS
 git clone https://github.com/willserna/Reto-Tecnico
 ```
 2. Go to the project path using a Terminal
-```
+
 3. Run
 ```
 docker-compose build
@@ -184,9 +202,11 @@ docker-compose build
 docker-compose up
 ```
 5. When the installation is finished, the Back-end will be available on port 3000 and the WebInterface on port 4200.
-```
-6. Please open your browser and type in the url localhost:4200
 
+6. Please open your browser and type in the url 
+```
+localhost:4200
+```
 
 ## License
 ISC
